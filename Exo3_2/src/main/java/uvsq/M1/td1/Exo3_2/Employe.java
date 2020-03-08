@@ -1,25 +1,29 @@
 package uvsq.M1.td1.Exo3_2;
 import java.util.*;
-import static java.lang.System.*;
 
-public class Employe {
+public abstract class  Employe {
 	
 	
 
 	protected String nom;
 	protected String prenom;
 	protected int  age;
-	protected double salaire;
+	protected int salaire;
 	protected int anneeEntree;
 	protected int moisEntree;
-	
-	public Employe(String nom, String prenom, int age, int anneeEntree, int moisEntre) {
+	protected int anneeAct;
+	protected int moisAct;
+	public Employe(String nom, String prenom, int age, int anneeEntree, int moisEntree,int anneeAct,int moisAct) {
 		this.nom=nom;
 		this.prenom=prenom;
 		this.age=age;
 		this.salaire=1500;
 		this.anneeEntree=anneeEntree;
-		this.moisEntree=moisEntree;	}
+		this.moisEntree=moisEntree;	
+		this.anneeAct=anneeAct;
+		this.moisAct=moisAct;
+	
+	}
 	public int getAnneeEntree()
 	{
 		return this.anneeEntree;
@@ -55,15 +59,15 @@ public class Employe {
 
 private int calculAnnee()
 {
-    Calendar date = Calendar.getInstance();
-    if(((date.MONTH-this.moisEntree)==0) & (date.YEAR> this.anneeEntree)) {
-    	return date.YEAR-this.anneeEntree;
+
+    if((((this.moisAct-this.moisEntree)==0) || ((this.moisAct-this.moisEntree)>0))& (this.anneeAct> this.anneeEntree)) {
+    	return this.anneeAct-this.anneeEntree;
 
     }
     else
 	return 0;
 }
-public double calculeSlaire() {
+public int calculeSlaire() {
 	return this.salaire+(20*this.calculAnnee());
 
 }
