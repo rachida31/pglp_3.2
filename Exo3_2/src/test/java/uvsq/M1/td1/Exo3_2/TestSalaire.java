@@ -56,7 +56,6 @@ public class TestSalaire {
 		@Test
 		public void testcalculeSlaireVendeur()
 		{
-		System.out.println("hhhhhhhhhhh "+vendeur.calculeSlaire());
 		
 			assertTrue(vendeur.calculeSlaire()==2300);	
 
