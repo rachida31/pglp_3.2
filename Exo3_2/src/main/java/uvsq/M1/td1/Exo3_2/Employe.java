@@ -1,5 +1,4 @@
 package uvsq.M1.td1.Exo3_2;
-import java.util.*;
 
 public abstract class  Employe {
 	
